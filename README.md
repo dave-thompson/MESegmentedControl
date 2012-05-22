@@ -15,7 +15,7 @@ Instructions
     1. **CustomBadge.m**
 1. _MESegmentedControl should use ARC but CustomBadge should not._ Therefore, assuming your project is set up for ARC, add the compiler flag -fno-objc-arc to the CustomBadge.m source within your target. See illustrated instructions [here](http://www.leesilver.net/1/post/2011/8/disabling-arc-on-certain-files-in-xcode.html).
 1. Use MESegmentedControl in place of UISegmentedControl within your application.
-1. Set badge numbers using `[segmentedControl setBadgeNumber:1 forSegmentAtIndex:0];`
+1. Set badge numbers like this: `[segmentedControl setBadgeNumber:1 forSegmentAtIndex:0];`. Setting a badge number to 0 removes the badge.
 
 Open the included XCode project to see a sample app.
 
