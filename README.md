@@ -3,7 +3,7 @@ Introduction
 
 MESegmentedControl is an enhanced UISegmentedControl which allows you to set badge numbers on each of the controls' segments, like so:
 
-![MESegmentedControl Example](/dave-thompson/MESegmentedControl/blob/master/SampleScreenShot.png)
+![MESegmentedControl Example](/dave-thompson/MESegmentedControl/raw/master/SampleScreenShot.png)
 
 Instructions
 -------------------------
