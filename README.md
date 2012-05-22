@@ -31,7 +31,7 @@ None of these limitations are inherent to the platform: they may be resolved wit
 License
 -------------------------
 
-This is distributed under the Modified BSD License.
+MESegmentedControl is distributed under the Modified BSD License.
 
 Credits
 -------------------------
