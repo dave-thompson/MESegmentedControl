@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5502CF61156B4CE200C4AC00 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5502CF60156B4CE200C4AC00 /* UIKit.framework */; };
+		5502CF63156B4CE200C4AC00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5502CF62156B4CE200C4AC00 /* Foundation.framework */; };
+		5502CF65156B4CE200C4AC00 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5502CF64156B4CE200C4AC00 /* CoreGraphics.framework */; };
+		5502CF6B156B4CE200C4AC00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5502CF69156B4CE200C4AC00 /* InfoPlist.strings */; };
+		5502CF6D156B4CE200C4AC00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CF6C156B4CE200C4AC00 /* main.m */; };
+		5502CF71156B4CE200C4AC00 /* MEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CF70156B4CE200C4AC00 /* MEAppDelegate.m */; };
+		5502CF74156B4CE200C4AC00 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5502CF72156B4CE200C4AC00 /* MainStoryboard.storyboard */; };
+		5502CF77156B4CE200C4AC00 /* MEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CF76156B4CE200C4AC00 /* MEViewController.m */; };
+		5502CF81156B4D0500C4AC00 /* MESegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CF7E156B4D0500C4AC00 /* MESegmentedControl.m */; };
+		5502CF82156B4D0500C4AC00 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CF80156B4D0500C4AC00 /* CustomBadge.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5502CF5C156B4CE200C4AC00 /* MESegmentedControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MESegmentedControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5502CF60156B4CE200C4AC00 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5502CF62156B4CE200C4AC00 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5502CF64156B4CE200C4AC00 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5502CF68156B4CE200C4AC00 /* MESegmentedControl-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MESegmentedControl-Info.plist"; sourceTree = "<group>"; };
+		5502CF6A156B4CE200C4AC00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5502CF6C156B4CE200C4AC00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5502CF6E156B4CE200C4AC00 /* MESegmentedControl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MESegmentedControl-Prefix.pch"; sourceTree = "<group>"; };
+		5502CF6F156B4CE200C4AC00 /* MEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MEAppDelegate.h; sourceTree = "<group>"; };
+		5502CF70156B4CE200C4AC00 /* MEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MEAppDelegate.m; sourceTree = "<group>"; };
+		5502CF73156B4CE200C4AC00 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5502CF75156B4CE200C4AC00 /* MEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MEViewController.h; sourceTree = "<group>"; };
+		5502CF76156B4CE200C4AC00 /* MEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MEViewController.m; sourceTree = "<group>"; };
+		5502CF7D156B4D0500C4AC00 /* MESegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESegmentedControl.h; sourceTree = "<group>"; };
+		5502CF7E156B4D0500C4AC00 /* MESegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESegmentedControl.m; sourceTree = "<group>"; };
+		5502CF7F156B4D0500C4AC00 /* CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBadge.h; sourceTree = "<group>"; };
+		5502CF80156B4D0500C4AC00 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBadge.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5502CF59156B4CE200C4AC00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5502CF61156B4CE200C4AC00 /* UIKit.framework in Frameworks */,
+				5502CF63156B4CE200C4AC00 /* Foundation.framework in Frameworks */,
+				5502CF65156B4CE200C4AC00 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5502CF51156B4CE200C4AC00 = {
+			isa = PBXGroup;
+			children = (
+				5502CF66156B4CE200C4AC00 /* MESegmentedControl */,
+				5502CF5F156B4CE200C4AC00 /* Frameworks */,
+				5502CF5D156B4CE200C4AC00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5502CF5D156B4CE200C4AC00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5502CF5C156B4CE200C4AC00 /* MESegmentedControl.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5502CF5F156B4CE200C4AC00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5502CF60156B4CE200C4AC00 /* UIKit.framework */,
+				5502CF62156B4CE200C4AC00 /* Foundation.framework */,
+				5502CF64156B4CE200C4AC00 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5502CF66156B4CE200C4AC00 /* MESegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				5502CF72156B4CE200C4AC00 /* MainStoryboard.storyboard */,
+				5502CF6F156B4CE200C4AC00 /* MEAppDelegate.h */,
+				5502CF70156B4CE200C4AC00 /* MEAppDelegate.m */,
+				5502CF75156B4CE200C4AC00 /* MEViewController.h */,
+				5502CF76156B4CE200C4AC00 /* MEViewController.m */,
+				5502CF83156B4D2000C4AC00 /* MESegmentedControl Library */,
+				5502CF67156B4CE200C4AC00 /* Supporting Files */,
+			);
+			path = MESegmentedControl;
+			sourceTree = "<group>";
+		};
+		5502CF67156B4CE200C4AC00 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5502CF68156B4CE200C4AC00 /* MESegmentedControl-Info.plist */,
+				5502CF69156B4CE200C4AC00 /* InfoPlist.strings */,
+				5502CF6C156B4CE200C4AC00 /* main.m */,
+				5502CF6E156B4CE200C4AC00 /* MESegmentedControl-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5502CF83156B4D2000C4AC00 /* MESegmentedControl Library */ = {
+			isa = PBXGroup;
+			children = (
+				5502CF7D156B4D0500C4AC00 /* MESegmentedControl.h */,
+				5502CF7E156B4D0500C4AC00 /* MESegmentedControl.m */,
+				5502CF7F156B4D0500C4AC00 /* CustomBadge.h */,
+				5502CF80156B4D0500C4AC00 /* CustomBadge.m */,
+			);
+			name = "MESegmentedControl Library";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5502CF5B156B4CE200C4AC00 /* MESegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5502CF7A156B4CE200C4AC00 /* Build configuration list for PBXNativeTarget "MESegmentedControl" */;
+			buildPhases = (
+				5502CF58156B4CE200C4AC00 /* Sources */,
+				5502CF59156B4CE200C4AC00 /* Frameworks */,
+				5502CF5A156B4CE200C4AC00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MESegmentedControl;
+			productName = MESegmentedControl;
+			productReference = 5502CF5C156B4CE200C4AC00 /* MESegmentedControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5502CF53156B4CE200C4AC00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ME;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 5502CF56156B4CE200C4AC00 /* Build configuration list for PBXProject "MESegmentedControl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5502CF51156B4CE200C4AC00;
+			productRefGroup = 5502CF5D156B4CE200C4AC00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5502CF5B156B4CE200C4AC00 /* MESegmentedControl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5502CF5A156B4CE200C4AC00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5502CF6B156B4CE200C4AC00 /* InfoPlist.strings in Resources */,
+				5502CF74156B4CE200C4AC00 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5502CF58156B4CE200C4AC00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5502CF6D156B4CE200C4AC00 /* main.m in Sources */,
+				5502CF71156B4CE200C4AC00 /* MEAppDelegate.m in Sources */,
+				5502CF77156B4CE200C4AC00 /* MEViewController.m in Sources */,
+				5502CF81156B4D0500C4AC00 /* MESegmentedControl.m in Sources */,
+				5502CF82156B4D0500C4AC00 /* CustomBadge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5502CF69156B4CE200C4AC00 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5502CF6A156B4CE200C4AC00 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5502CF72156B4CE200C4AC00 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5502CF73156B4CE200C4AC00 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5502CF78156B4CE200C4AC00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5502CF79156B4CE200C4AC00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5502CF7B156B4CE200C4AC00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MESegmentedControl/MESegmentedControl-Prefix.pch";
+				INFOPLIST_FILE = "MESegmentedControl/MESegmentedControl-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5502CF7C156B4CE200C4AC00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MESegmentedControl/MESegmentedControl-Prefix.pch";
+				INFOPLIST_FILE = "MESegmentedControl/MESegmentedControl-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5502CF56156B4CE200C4AC00 /* Build configuration list for PBXProject "MESegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5502CF78156B4CE200C4AC00 /* Debug */,
+				5502CF79156B4CE200C4AC00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5502CF7A156B4CE200C4AC00 /* Build configuration list for PBXNativeTarget "MESegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5502CF7B156B4CE200C4AC00 /* Debug */,
+				5502CF7C156B4CE200C4AC00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5502CF53156B4CE200C4AC00 /* Project object */;
+}
