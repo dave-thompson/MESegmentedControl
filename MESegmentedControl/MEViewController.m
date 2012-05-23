@@ -14,7 +14,17 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [super viewDidLoad];    
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     // Set badge numbers on segmented control
     [segmentedControl setBadgeNumber:1 forSegmentAtIndex:0];
@@ -22,9 +32,12 @@
     [segmentedControl setBadgeNumber:333 forSegmentAtIndex:2];
 }
 
-- (void)viewDidUnload
+- (void)viewDidDisappear:(BOOL)animated
 {
-    [super viewDidUnload];
+    [super viewDidDisappear:animated];
+    
+    // Clear the badge numbers
+    [segmentedControl clearBadges];
 }
 
 @end

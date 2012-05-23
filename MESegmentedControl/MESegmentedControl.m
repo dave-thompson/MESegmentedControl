@@ -12,7 +12,7 @@
 
 - (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex
 {
-    // If this is the first time a badge number has been set, then initialise
+    // If this is the first time a badge number has been set, then initialise the badges
     if (_segmentBadgeNumbers.count == 0)
     {
         //initialise the badge arrays
@@ -24,8 +24,7 @@
             [_segmentBadges addObject:[NSNull null]];
         }
         
-        // add a transparent view on top of the segmented control to hold the badges
-        // (this transparent view is added to the superview to work around stange UISegmentedControl behaviour which causes its own subviews to be obscured when certain segments are selected)
+        // Create a transparent view to go on top of the segmented control and to hold the badges. (This transparent view is added to the superview to work around strange UISegmentedControl behaviour which causes its own subviews to be obscured when certain segments are selected. It's important then that the MESegmentedControl is placed on top of a suitable view and not directly onto a UINavigationItem.)
         _badgeView = [[UIView alloc] initWithFrame:self.frame];
         [_badgeView setBackgroundColor:[UIColor clearColor]];
         _badgeView.userInteractionEnabled = NO;
@@ -42,10 +41,9 @@
         // Add a badge, positioned on the upper right side of the requested segment
         // (Assumes that all segments are the same size - if segments are of different sizes, modify the below to use the widthForSegmentAtIndex method on UISegmentedControl)
         CustomBadge *customBadge = [CustomBadge customBadgeWithString:[NSString stringWithFormat:@"%d", badgeNumber]];
-        // CHANGE THE BADGE'S LOOK & FEEL HERE IF DESIRED - SEE THE METHODS IN CUSTOMBADGE.H
-        // eg. customBadge.badgeInsetColor = [UIColor greenColor];
-        [customBadge setFrame:CGRectMake(((self.frame.size.width/self.numberOfSegments)* (segmentIndex + 1))-customBadge.frame.size.width +5, -5, customBadge.frame.size.width, customBadge.frame.size.height)];
+        [customBadge setFrame:CGRectMake(((self.frame.size.width/self.numberOfSegments) * (segmentIndex + 1))-customBadge.frame.size.width +5, -5, customBadge.frame.size.width, customBadge.frame.size.height)];
         [_segmentBadges replaceObjectAtIndex:segmentIndex withObject:customBadge];
+        // Note: Change the badge's look & feel here if desired - see the methods in CustomBadge.h. (Eg: customBadge.badgeInsetColor = [UIColor greenColor];)
         [_badgeView addSubview:customBadge];
     }
     else if ((oldBadgeNumber > 0) && (badgeNumber == 0))
@@ -58,13 +56,28 @@
     {
         // Update the number on the existing badge
         [[_segmentBadges objectAtIndex:segmentIndex] autoBadgeSizeWithString:[NSString stringWithFormat:@"%d", badgeNumber]];
-    }    
+    }
+}
+
+- (void)clearBadges
+{
+    // Remove the badge view
+    [_badgeView removeFromSuperview];
+    
+    // Clear the badge arrays
+    [_segmentBadges removeAllObjects];
+    [_segmentBadgeNumbers removeAllObjects];
 }
 
 -(void)removeFromSuperview
 {
     if (_badgeView) [_badgeView removeFromSuperview];
     [super removeFromSuperview];
+}
+
+-(void)dealloc
+{
+    if (_badgeView) [_badgeView removeFromSuperview];
 }
 
 // Note: This subclass does not handle the case where a UISegmentedControl's items are changed after instantiation.
@@ -74,6 +87,6 @@
  - (void)insertSegmentWithImage:(UIImage *)image  atIndex:(NSUInteger)segment animated:(BOOL)animated;
  - (void)removeSegmentAtIndex:(NSUInteger)segment animated:(BOOL)animated;
  - (void)removeAllSegments;
-*/
-         
+ */
+
 @end

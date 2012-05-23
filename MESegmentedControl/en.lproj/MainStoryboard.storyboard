@@ -18,15 +18,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="146-Lq-H1F">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Vtw-Wx-w1U" customClass="MESegmentedControl">
-                            <rect key="frame" x="10" y="7" width="300" height="30"/>
+                        <view key="titleView" userInteractionEnabled="NO" contentMode="scaleToFill" id="dd5-2p-1wj">
+                            <rect key="frame" x="5" y="6" width="310" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                                <segment title="Third"/>
-                            </segments>
-                        </segmentedControl>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Vtw-Wx-w1U" customClass="MESegmentedControl">
+                                    <rect key="frame" x="5" y="2" width="300" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="First"/>
+                                        <segment title="Second"/>
+                                        <segment title="Third"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
                     </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="Vtw-Wx-w1U" id="aeZ-K0-5bZ"/>
@@ -51,6 +58,17 @@
             <point key="canvasLocation" x="-112" y="76"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MESegmentedControl" superclassName="UISegmentedControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MESegmentedControl.h"/>
+        </class>
+        <class className="MEViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MEViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="MESegmentedControl"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
