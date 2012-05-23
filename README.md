@@ -22,7 +22,7 @@ Usage
 1. Within your application, replace instances of UISegmentedControl with MESegmentedControl.
 1. Use `[segmentedControl setBadgeNumber:12 forSegmentAtIndex:0]` to set a badge number of 12 on the first segment. Set the badge number to 0 to remove the badge.
 1. Optionally set your badge numbers in your view controller's viewWillAppear method and clear them using `[statusSegmentedControl clearBadges]` in viewDidDisappear.
-1. _MESegmentedControl should not be placed directly on a UINavigationItem due to issues during push / pop transitions._ If you wish to use MESegmentedControl within a UINavigationItem (as in the screenshot above), then do not do so directly. Instead, place a transparent UIView onto the UINavigationItem and place the MESegmentedControl onto the transparent UIView. You should also set `userInteractionEnabled = NO` on the transparent UIView.
+1. _MESegmentedControl should not be placed directly on a UINavigationItem due to issues during push / pop transitions._ If you wish to use MESegmentedControl within a UINavigationItem (as in the screenshot above), then do not do so directly. Instead, place a transparent UIView onto the UINavigationItem and place the MESegmentedControl onto the transparent UIView.
 1. If you need to add or remove segments after adding your first badge, then call `[statusSegmentedControl clearBadges]` beforehand. _It's not sufficient here to simply set your badges to zero._
 
 Open the included XCode project to see a sample app.

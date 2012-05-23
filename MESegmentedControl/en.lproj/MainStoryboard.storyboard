@@ -18,7 +18,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="146-Lq-H1F">
                         <nil key="title"/>
-                        <view key="titleView" userInteractionEnabled="NO" contentMode="scaleToFill" id="dd5-2p-1wj">
+                        <view key="titleView" contentMode="scaleToFill" id="dd5-2p-1wj">
                             <rect key="frame" x="5" y="6" width="310" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
