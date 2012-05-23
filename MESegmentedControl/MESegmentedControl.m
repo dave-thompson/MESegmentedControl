@@ -10,7 +10,7 @@
 
 @implementation MESegmentedControl
 
-- (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex
+- (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex usingBlock:(void(^)(CustomBadge *))configureBadge
 {
     // If this is the first time a badge number has been set, then initialise the badges
     if (_segmentBadgeNumbers.count == 0)
@@ -43,7 +43,6 @@
         CustomBadge *customBadge = [CustomBadge customBadgeWithString:[NSString stringWithFormat:@"%d", badgeNumber]];
         [customBadge setFrame:CGRectMake(((self.frame.size.width/self.numberOfSegments) * (segmentIndex + 1))-customBadge.frame.size.width +5, -5, customBadge.frame.size.width, customBadge.frame.size.height)];
         [_segmentBadges replaceObjectAtIndex:segmentIndex withObject:customBadge];
-        // Note: Change the badge's look & feel here if desired - see the methods in CustomBadge.h. (Eg: customBadge.badgeInsetColor = [UIColor greenColor];)
         [_badgeView addSubview:customBadge];
     }
     else if ((oldBadgeNumber > 0) && (badgeNumber == 0))
@@ -57,6 +56,14 @@
         // Update the number on the existing badge
         [[_segmentBadges objectAtIndex:segmentIndex] autoBadgeSizeWithString:[NSString stringWithFormat:@"%d", badgeNumber]];
     }
+    
+    // Yield to the block for any custom setup to be done on the badge
+    configureBadge([_segmentBadges objectAtIndex:segmentIndex]);
+}
+
+- (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex
+{
+    [self setBadgeNumber:badgeNumber forSegmentAtIndex:segmentIndex usingBlock:^(CustomBadge *badge){}];
 }
 
 - (void)clearBadges
@@ -79,14 +86,5 @@
 {
     if (_badgeView) [_badgeView removeFromSuperview];
 }
-
-// Note: This subclass does not handle the case where a UISegmentedControl's items are changed after instantiation.
-//       To handle this, also override the following methods on UISegmentedControl.
-/*
- - (void)insertSegmentWithTitle:(NSString *)title atIndex:(NSUInteger)segment animated:(BOOL)animated; // insert before segment number. 0..#segments. value pinned
- - (void)insertSegmentWithImage:(UIImage *)image  atIndex:(NSUInteger)segment animated:(BOOL)animated;
- - (void)removeSegmentAtIndex:(NSUInteger)segment animated:(BOOL)animated;
- - (void)removeAllSegments;
- */
 
 @end

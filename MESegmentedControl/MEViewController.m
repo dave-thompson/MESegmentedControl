@@ -7,6 +7,7 @@
 //
 
 #import "MEViewController.h"
+#import "CustomBadge.h"
 
 @implementation MEViewController
 
@@ -26,10 +27,19 @@
 {
     [super viewWillAppear:animated];
     
-    // Set badge numbers on segmented control
+    // To set standard white on red badges:
     [segmentedControl setBadgeNumber:1 forSegmentAtIndex:0];
     [segmentedControl setBadgeNumber:22 forSegmentAtIndex:1];
-    [segmentedControl setBadgeNumber:333 forSegmentAtIndex:2];
+
+    // To set a badge with custom colours:
+    [segmentedControl setBadgeNumber:333 forSegmentAtIndex:2 usingBlock:^(CustomBadge *badge)
+     {
+         // See CustomBadge.h for other badge properties that can be changed here
+         badge.badgeFrameColor = [UIColor blackColor]; // default is white
+         badge.badgeInsetColor = [UIColor yellowColor]; // default is red
+         badge.badgeTextColor = [UIColor blackColor]; // default is white
+     }
+     ];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
