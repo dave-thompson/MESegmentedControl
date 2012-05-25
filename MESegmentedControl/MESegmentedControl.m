@@ -58,7 +58,10 @@
     }
     
     // Yield to the block for any custom setup to be done on the badge
-    configureBadge([_segmentBadges objectAtIndex:segmentIndex]);
+    if (badgeNumber > 0)
+    {
+        configureBadge([_segmentBadges objectAtIndex:segmentIndex]);
+    }
 }
 
 - (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex
