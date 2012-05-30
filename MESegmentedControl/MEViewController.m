@@ -12,6 +12,8 @@
 @implementation MEViewController
 
 @synthesize segmentedControl;
+@synthesize button;
+@synthesize label;
 
 - (void)viewDidLoad
 {
@@ -20,6 +22,8 @@
 
 - (void)viewDidUnload
 {
+    [self setButton:nil];
+    [self setLabel:nil];
     [super viewDidUnload];
 }
 
@@ -48,6 +52,14 @@
     
     // Clear the badge numbers
     [segmentedControl clearBadges];
+}
+
+/** Puts the badge of the first segment into the label. */
+- (IBAction)onClick:(UIButton *)sender {
+    MESegmentedControl* sc=self.segmentedControl;
+    NSUInteger i=[sc getBadgeNumberForSegmentAtIndex:0];
+    NSString* text=[NSString stringWithFormat:@"%d", i];
+    self.label.text=text;
 }
 
 @end

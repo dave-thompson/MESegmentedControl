@@ -12,5 +12,10 @@
 @interface MEViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet MESegmentedControl *segmentedControl;
+@property (strong, nonatomic) IBOutlet UIButton *button;
+@property (strong, nonatomic) IBOutlet UILabel *label;
+
+/** Puts the badge of the first segment into the label. */
+- (IBAction)onClick:(UIButton *)sender;
 
 @end

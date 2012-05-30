@@ -10,6 +10,17 @@
 
 @implementation MESegmentedControl
 
+// Gets the badge number for a specific segment.
+- (NSUInteger)getBadgeNumberForSegmentAtIndex:(NSUInteger)segmentIndex{
+    if(_segmentBadgeNumbers==nil)
+        return 0;
+    NSNumber* number=[_segmentBadgeNumbers objectAtIndex:segmentIndex];
+    if(number==nil)
+        return 0;
+    NSUInteger i=[number unsignedIntegerValue];
+    return i;
+}
+
 - (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex usingBlock:(void(^)(CustomBadge *))configureBadge
 {
     // If this is the first time a badge number has been set, then initialise the badges
