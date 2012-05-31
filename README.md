@@ -24,6 +24,7 @@ Usage
 1. Consider setting your badge numbers in your view controller's viewWillAppear method and clearing them using `[segmentedControl clearBadges]` in viewDidDisappear.
 1. _MESegmentedControl should not be placed directly on a UINavigationItem due to issues during push / pop transitions._ If you wish to use MESegmentedControl within a UINavigationItem (as in the screenshot above), then do not do so directly. Instead, place a transparent UIView onto the UINavigationItem and place the MESegmentedControl onto the transparent UIView.
 1. If you need to add or remove segments after adding your first badge, then call `[segmentedControl clearBadges]` beforehand. _It's not sufficient here to simply set your badges to zero._
+2. To get the current badge number of a segment, call `NSUInteger i=[segmentedControl getBadgeNumberForSegmentAtIndex:0]`.
 
 Open the included XCode project to see a sample app.
 
