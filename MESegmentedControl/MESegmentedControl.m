@@ -69,6 +69,23 @@
     [self setBadgeNumber:badgeNumber forSegmentAtIndex:segmentIndex usingBlock:^(CustomBadge *badge){}];
 }
 
+- (NSUInteger)getBadgeNumberForSegmentAtIndex:(NSUInteger)segmentIndex
+{
+    if(_segmentBadgeNumbers==nil)
+    {
+        return 0;
+    }
+    NSNumber* number=[_segmentBadgeNumbers objectAtIndex:segmentIndex];
+    if(number==nil)
+    {
+        return 0;
+    }
+    else
+    {
+        return [number unsignedIntegerValue];
+    }
+}
+
 - (void)clearBadges
 {
     // Remove the badge view

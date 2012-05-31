@@ -20,11 +20,14 @@
 // Use the block to make adjustments to badge formatting, using the methods outlined in CustomBadge.h.
 - (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex usingBlock:(void(^)(CustomBadge *))configureBadge;
 
-// Convenience method for setting a badge number with default look and feel
+// Convenience method for setting a badge number with default look and feel.
 - (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex;
 
+// Get the badge number for a specific segment.
+- (NSUInteger)getBadgeNumberForSegmentAtIndex:(NSUInteger)segmentIndex;
+
 // Clear badges across all segments.
-// If you need to add or remove segments
+// If you need to add or remove segments, then call clearBadges first.
 - (void)clearBadges;
 
 @end
