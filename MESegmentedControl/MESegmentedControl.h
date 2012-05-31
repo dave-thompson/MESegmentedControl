@@ -15,6 +15,9 @@
     UIView *_badgeView;
 }
 
+// Gets the badge number for a specific segment.
+- (NSUInteger)getBadgeNumberForSegmentAtIndex:(NSUInteger)segmentIndex;
+
 // Set the badge number for a specific segment.
 // Setting the badge number to 0 will clear the badge for that segment.
 // Use the block to make adjustments to badge formatting, using the methods outlined in CustomBadge.h.
