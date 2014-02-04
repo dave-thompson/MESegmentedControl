@@ -8,13 +8,48 @@
 //  Copyright (c) 2012 David Thompson. All rights reserved.
 //
 
+// taken from CustomBadge; it would be nicer to have this defined in CustomBadge and included of course
+#define kCustomBadgeWidth (25)
+
 @implementation MESegmentedControl
 
-- (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex usingBlock:(void(^)(CustomBadge *))configureBadge
-{
-    // If this is the first time a badge number has been set, then initialise the badges
+// Make an even distribution of space between labels, allowing one badge width per label.
+-(void)resizeSegmentsToFitTitles {
+  
+  CGFloat originalWidth = self.bounds.size.width;
+  
+  // this may not be the exact font used in the label but the proportion, not the exact measurement, matters
+  UIFont* segmentFont = [UIFont systemFontOfSize:[UIFont labelFontSize]];
+
+  NSInteger numberOfSegments = [self numberOfSegments];
+  NSInteger index;
+  NSMutableArray *labelWidths = [NSMutableArray arrayWithCapacity:numberOfSegments];
+  CGFloat totalWidth = 0;
+  
+  // adding badge width to both totals and labels and then calculating proportions decreases error
+  for(index = 0; index < numberOfSegments; index++) {
+    NSString *labelString = [self titleForSegmentAtIndex:index];
+    CGFloat labelWidth = [labelString sizeWithFont:segmentFont].width;
+    totalWidth += labelWidth + kCustomBadgeWidth;
+    [labelWidths addObject:[NSNumber numberWithFloat:labelWidth]];
+  }
+  
+  for(index = 0; index < numberOfSegments; index++) {
+    CGFloat measuredWidth = [[labelWidths objectAtIndex:index] floatValue];
+    CGFloat calculatedWidth = floor(originalWidth * (measuredWidth + kCustomBadgeWidth) / totalWidth);
+    [self setWidth:calculatedWidth forSegmentAtIndex:index];
+  }
+}
+
+- (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex usingBlock:(void(^)(CustomBadge *))configureBadge{
+    // If this is the first time a badge number has been set, then initialise the segment widths and badges
     if (_segmentBadgeNumbers.count == 0)
     {
+      // to size segments correctly (leaving room for badges, not overlapping labels) the segment sizes must be
+      // calculated manually. If not, widthForSegmentAtIndex: returns 0 and badge position can't be set accurately
+      // (it would be best to override setTitle:forSegmentAtIndex: and related methods but this is easier for now)
+      [self resizeSegmentsToFitTitles];
+      
         //initialise the badge arrays
         _segmentBadgeNumbers = [NSMutableArray arrayWithCapacity:self.numberOfSegments];
         _segmentBadges = [NSMutableArray arrayWithCapacity:self.numberOfSegments];
@@ -39,9 +74,15 @@
     if ((oldBadgeNumber == 0) && (badgeNumber > 0))
     {
         // Add a badge, positioned on the upper right side of the requested segment
-        // (Assumes that all segments are the same size - if segments are of different sizes, modify the below to use the widthForSegmentAtIndex method on UISegmentedControl)
+      CGFloat rightEdgeOfSegment = 0;
+      for(int i = 0; i <= segmentIndex; i++) {
+        rightEdgeOfSegment += [self widthForSegmentAtIndex:i];
+      }
         CustomBadge *customBadge = [CustomBadge customBadgeWithString:[NSString stringWithFormat:@"%d", badgeNumber]];
-        [customBadge setFrame:CGRectMake(((self.frame.size.width/self.numberOfSegments) * (segmentIndex + 1))-customBadge.frame.size.width +5, -5, customBadge.frame.size.width, customBadge.frame.size.height)];
+        [customBadge setFrame:CGRectMake(rightEdgeOfSegment - (2 * customBadge.frame.size.width / 3),
+                                         -5,
+                                         customBadge.frame.size.width,
+                                         customBadge.frame.size.height)];
         [_segmentBadges replaceObjectAtIndex:segmentIndex withObject:customBadge];
         [_badgeView addSubview:customBadge];
     }
