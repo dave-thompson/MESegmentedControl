@@ -28,8 +28,9 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "MEBadgeType.h"
 
-@interface CustomBadge : UIView {
+@interface CustomBadge : UIView <MEBadgeType> {
 	
 	NSString *badgeText;
 	UIColor *badgeTextColor;

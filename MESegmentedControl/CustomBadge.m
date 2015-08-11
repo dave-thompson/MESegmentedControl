@@ -30,6 +30,7 @@
 
 @implementation CustomBadge
 
+@dynamic frame;
 @synthesize badgeText;
 @synthesize badgeTextColor;
 @synthesize badgeInsetColor;
@@ -38,6 +39,10 @@
 @synthesize badgeCornerRoundness;
 @synthesize badgeScaleFactor;
 @synthesize badgeShining;
+
+- (void)addToView:(UIView *)view {
+    [view addSubview:self];
+}
 
 // I recommend to use the allocator customBadgeWithString
 - (id) initWithString:(NSString *)badgeString withScale:(CGFloat)scale withShining:(BOOL)shining
