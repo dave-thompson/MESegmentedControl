@@ -37,6 +37,8 @@
 		5502CF7E156B4D0500C4AC00 /* MESegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESegmentedControl.m; sourceTree = "<group>"; };
 		5502CF7F156B4D0500C4AC00 /* CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBadge.h; sourceTree = "<group>"; };
 		5502CF80156B4D0500C4AC00 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBadge.m; sourceTree = "<group>"; };
+		E6D6532E1B7A8C9F004A466B /* MEBadgeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MEBadgeType.h; sourceTree = "<group>"; };
+		E6D6532F1B7A8CC3004A466B /* MEBadgeFactoryType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MEBadgeFactoryType.h; path = MESegmentedControl.xcodeproj/../MEBadgeFactoryType.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,8 @@
 				5502CF7E156B4D0500C4AC00 /* MESegmentedControl.m */,
 				5502CF7F156B4D0500C4AC00 /* CustomBadge.h */,
 				5502CF80156B4D0500C4AC00 /* CustomBadge.m */,
+				E6D6532F1B7A8CC3004A466B /* MEBadgeFactoryType.h */,
+				E6D6532E1B7A8C9F004A466B /* MEBadgeType.h */,
 			);
 			name = "MESegmentedControl Library";
 			sourceTree = "<group>";
@@ -295,6 +299,7 @@
 				5502CF7C156B4CE200C4AC00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
