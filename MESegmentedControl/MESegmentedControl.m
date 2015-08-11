@@ -1,6 +1,3 @@
-#import "MESegmentedControl.h"
-#import "CustomBadge.h"
-
 //
 //  MESegmentedControl.m
 //
@@ -8,9 +5,14 @@
 //  Copyright (c) 2012 David Thompson. All rights reserved.
 //
 
+#import "MESegmentedControl.h"
+#import "MEBadgeFactory.h"
+
 @implementation MESegmentedControl
 
-- (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex usingBlock:(void(^)(CustomBadge *))configureBadge
+@synthesize badgeFactory = _badgeFactory;
+
+- (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex usingBlock:(void(^)(id <MEBadgeType>))configureBadge
 {
     // If this is the first time a badge number has been set, then initialise the badges
     if (_segmentBadgeNumbers.count == 0)
@@ -39,11 +41,11 @@
     if ((oldBadgeNumber == 0) && (badgeNumber > 0))
     {
         // Add a badge, positioned on the upper right side of the requested segment
-        // (Assumes that all segments are the same size - if segments are of different sizes, modify the below to use the widthForSegmentAtIndex method on UISegmentedControl)
-        CustomBadge *customBadge = [CustomBadge customBadgeWithString:[NSString stringWithFormat:@"%d", badgeNumber]];
+        id <MEBadgeType> customBadge = [self.badgeFactory customBadgeWithString:[NSString stringWithFormat:@"%d", badgeNumber]];
         [customBadge setFrame:CGRectMake(((self.frame.size.width/self.numberOfSegments) * (segmentIndex + 1))-customBadge.frame.size.width +5, -5, customBadge.frame.size.width, customBadge.frame.size.height)];
+        
         [_segmentBadges replaceObjectAtIndex:segmentIndex withObject:customBadge];
-        [_badgeView addSubview:customBadge];
+        [customBadge addToView:_badgeView];
     }
     else if ((oldBadgeNumber > 0) && (badgeNumber == 0))
     {
@@ -66,7 +68,7 @@
 
 - (void)setBadgeNumber:(NSUInteger)badgeNumber forSegmentAtIndex:(NSUInteger)segmentIndex
 {
-    [self setBadgeNumber:badgeNumber forSegmentAtIndex:segmentIndex usingBlock:^(CustomBadge *badge){}];
+    [self setBadgeNumber:badgeNumber forSegmentAtIndex:segmentIndex usingBlock:^(id <MEBadgeType> badge){}];
 }
 
 - (NSUInteger)getBadgeNumberForSegmentAtIndex:(NSUInteger)segmentIndex
@@ -105,6 +107,14 @@
 -(void)dealloc
 {
     if (_badgeView) [_badgeView removeFromSuperview];
+}
+
+- (id <MEBadgeFactoryType>)badgeFactory {
+    if (_badgeFactory == nil) {
+        _badgeFactory = [[MEBadgeFactory alloc] init];
+    }
+    
+    return _badgeFactory;
 }
 
 @end
