@@ -17,6 +17,7 @@
 		5502CF77156B4CE200C4AC00 /* MEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CF76156B4CE200C4AC00 /* MEViewController.m */; };
 		5502CF81156B4D0500C4AC00 /* MESegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CF7E156B4D0500C4AC00 /* MESegmentedControl.m */; };
 		5502CF82156B4D0500C4AC00 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CF80156B4D0500C4AC00 /* CustomBadge.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E6D653321B7A8D3B004A466B /* MEBadgeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D653311B7A8D3B004A466B /* MEBadgeFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		5502CF80156B4D0500C4AC00 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBadge.m; sourceTree = "<group>"; };
 		E6D6532E1B7A8C9F004A466B /* MEBadgeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MEBadgeType.h; sourceTree = "<group>"; };
 		E6D6532F1B7A8CC3004A466B /* MEBadgeFactoryType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MEBadgeFactoryType.h; path = MESegmentedControl.xcodeproj/../MEBadgeFactoryType.h; sourceTree = SOURCE_ROOT; };
+		E6D653301B7A8D3B004A466B /* MEBadgeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEBadgeFactory.h; sourceTree = "<group>"; };
+		E6D653311B7A8D3B004A466B /* MEBadgeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEBadgeFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 		5502CF83156B4D2000C4AC00 /* MESegmentedControl Library */ = {
 			isa = PBXGroup;
 			children = (
+				E6D653301B7A8D3B004A466B /* MEBadgeFactory.h */,
+				E6D653311B7A8D3B004A466B /* MEBadgeFactory.m */,
 				5502CF7D156B4D0500C4AC00 /* MESegmentedControl.h */,
 				5502CF7E156B4D0500C4AC00 /* MESegmentedControl.m */,
 				5502CF7F156B4D0500C4AC00 /* CustomBadge.h */,
@@ -183,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D653321B7A8D3B004A466B /* MEBadgeFactory.m in Sources */,
 				5502CF6D156B4CE200C4AC00 /* main.m in Sources */,
 				5502CF71156B4CE200C4AC00 /* MEAppDelegate.m in Sources */,
 				5502CF77156B4CE200C4AC00 /* MEViewController.m in Sources */,
